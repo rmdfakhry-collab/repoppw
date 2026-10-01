@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,">
+        <title>Document</title>
+
+</head>
+    <body>
+        <header>
+        <h1>Sistem Informasi Data Mahasiswa</h1>
+        <p>Sistem ini digunakan untuk mengelola data mahasiswa</p>
+        <img src="RobloxScreenShot20260102_012239057.png" alt="Gambar Mahasiswa" width="500">
+        </header>
+        <hr>
+        <nav>
+            <ul>
+                <li><a href="#Informasi Aplikasi">Home</a></li>
+                <li><a href="#Daftar Mahasiswa">About</a></li>
+                <li><a href="#tambah Mahasiswa Baru">Contact</a></li>
+            </ul>
+        </nav>
+        <hr>
+        <main>
+            <section id="Informasi Sistem">
+                <h2>Informasi Sistem</h2>
+                <p>Selamat datang di Sistem Informasi Data Mahasiswa!</p>
+                <article>
+                    <h3>Fitur Sistem</h3>
+                    <p>Sistem ini memiliki beberapa fitur, antara lain:</p>
+            </section>
+            <hr>
+            <section id="Daftar Mahasiswa">
+                <h2>Daftar Mahasiswa Aktif</h2>
+                <p>Berikut adalah daftar mahasiswa aktif di sistem:</p>
+                <table>
+                    <border="1"
+                    cellpadding="8"
+                    cellspacing="0"></border>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Foto</th>
+                            <th>NPM</th>
+                            <th>Nama Lengkap</th>
+                            <th>Program Studi</th>
+                            <th>Angkatan</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><img src="RobloxScreenShot20260102_012239057.png" alt="Foto Mahasiswa 1" width="100"></td>
+                            <td>2415061113</td>
+                            <td>Fakhry</td>
+                            <td>Teknik Informatika</td>
+                            <td>2024</td>
+                            <td>rmdfakhry@gmail.com</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <hr>
+            <section id="Form-Tambah">
+                <h2>Tambah Mahasiswa Baru</h2>
+                <p>Silakan isi formulir di bawah ini untuk menambahkan mahasiswa baru:</p>
+                <form>
+                    action="#" method="POST">
+                    <fieldset>
+                        <legend>Formulir Tambah Mahasiswa</legend>
+                        <p>
+                            <label for="npm">NPM:</label>
+                        </p>
+                        <p>
+                            <label for="nama">Nomor Pokok Mahasiswa (NPM):</label>
+                            <br>
+                            <input type="text" id="npm" name="npm" required>
+                            <type="text" id="nama" name="npm" 
+                            placeholder="2415061113" required>
+                            <pattern="[0-9]{8,12}" title="NPM harus terdiri dari 10 digit angka">
+                            <br>
+                            <small>Contoh: 2415061113</small>
+                        </p>
+                        <p>
+                            <label for="nama">Nama Lengkap:</label>
+                            <br>
+                            <input type="text" id="nama" name="nama" required>
+                            <placeholder="Fakhry" required>
+                                <br>
+                            <small>Contoh: Fakhry</small>
+                        </p>
+                        <p>
+                            <label for="prodi">Program Studi:</label>
+                            <br>
+                            <select id="prodi" name="prodi" required>
+                                <option value="">Pilih Program Studi</option>
+                                <option value="Teknik Informatika">Teknik Informatika</option>
+                        </select>
+                        <br>
+                            <small>Contoh: Teknik Informatika</small>
+                        <p>
+                            <label for="angkatan">Angkatan:</label>
+                            <br>
+                            <input type="number" id="angkatan" name="angkatan" 
+                            placeholder="2024" required>
+                            <min="2000" max="2024" step="1">
+                                <br>
+                            <small>Contoh: 2024</small>
+                        <p> 
+                            <label for="email">Email:</label>
+                            <br>
+                            <input type="email" id="email" name="email" placeholder="fakhry@example.com" required>
+                            <br>
+                            <small>Contoh: fakhry@example.com</small>
+                        </p>
+                        <p>
+                            <button type="submit">Simpan Data Mahasiswa</button>
+                            <button type="reset">Reset Formulir</button>
+                        </p>
+                    </fieldset>
+                </form>
+        </main>
+        </body>
+        </html>
