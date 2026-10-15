@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistem Informasi Data Mahasiswa - Praktikum 2</title>
+    <title>Sistem Informasi Data Mahasiswa - Praktikum 3</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Hubungkan dengan stylesheet CSS murni (tanpa framework) -->
-
 </head>
-<body id="top">
+<body>
 
     <!-- 1. Header Aplikasi -->
     <header class="site-header">
@@ -39,127 +37,102 @@
     <main>
         <div class="container">
 
+            <!-- Kotak Notifikasi Alert Dinamis (dikontrol oleh JS) -->
+            <div id="alert-box" class="alert-box" role="alert"></div>
+
             <!-- 3. Section Informasi Aplikasi -->
             <section id="informasi" class="content-section">
                 <div class="section-header">
                     <h2>Tentang Aplikasi</h2>
-                    <p>Fondasi visual dan tata letak responsif menggunakan CSS murni.</p>
+                    <p>Interaktivitas murni berbasis JavaScript dan DOM API tanpa library eksternal.</p>
                 </div>
-                <div class="section-body">
-                    <p>
-                        Sistem Informasi Data Mahasiswa ini merupakan proyek pembelajaran berkelanjutan 
-                        pada mata kuliah <strong>Pemrograman Web</strong>. Pada pertemuan ke-2 ini, seluruh 
-                        struktur HTML5 yang dibuat pada Praktikum 1 dipercantik tampilannya menggunakan 
-                        <strong>CSS murni</strong> dengan penerapan CSS Variables, Flexbox, CSS Grid, dan 
-                        Media Queries untuk menjamin kompatibilitas multi-device (Desktop, Tablet, Mobile).
-                    </p>
-                    <p>
-                        Informasi lebih lanjut tentang standar teknologi web modern dapat dipelajari pada 
-                        <a href="https://developer.mozilla.org/id/" target="_blank" rel="noopener noreferrer" class="link-email">Dokumentasi Pengembang Web MDN &UpperRightArrow;</a>.
-                    </p>
-                </div>
+                <p>
+                    Aplikasi ini adalah kelanjutan dari <strong>Praktikum 2</strong>. Pada tahap ini, 
+                    halaman web telah dilengkapi logika pemrograman interaktif di sisi klien: validasi form, 
+                    penambahan data instan tanpa muat ulang halaman, penghapusan data dengan konfirmasi, 
+                    pencarian langsung (*live search*), dan pembaruan badge counter secara *real-time*.
+                </p>
 
-                <!-- Grid Kartu Informasi Sistem -->
                 <div class="info-grid">
                     <article class="info-card">
                         <h3>Total Mahasiswa</h3>
-                        <p>3 Orang</p>
+                        <p id="total-mahasiswa-badge" class="counter-highlight">3</p>
                     </article>
                     <article class="info-card">
                         <h3>Tahun Akademik</h3>
                         <p>2025/2026</p>
                     </article>
                     <article class="info-card">
-                        <h3>Status Desain</h3>
-                        <p>Responsive CSS</p>
+                        <h3>Teknologi Aktif</h3>
+                        <p>HTML5 + CSS + JS DOM</p>
                     </article>
                 </div>
             </section>
 
-            <!-- 4. Section Daftar Mahasiswa & 5. Tabel Data Mahasiswa -->
+            <!-- 4. Section Daftar Mahasiswa, Toolbar Pencarian & 5. Tabel Data -->
             <section id="daftar-mahasiswa" class="content-section">
                 <div class="section-header">
                     <h2>Daftar Mahasiswa Aktif</h2>
-                    <p>Tabel data mahasiswa dengan wrapper responsif agar tetap nyaman dilihat pada layar kecil.</p>
+                    <p>Kelola data mahasiswa yang tersimpan secara dinamis pada memori peramban.</p>
                 </div>
 
-                <!-- Wrapper overflow responsif untuk tabel -->
+                <!-- Toolbar Pencarian dan Ringkasan Jumlah -->
+                <div class="table-toolbar">
+                    <div class="search-box">
+                        <input 
+                            type="search" 
+                            id="input-search" 
+                            class="search-input" 
+                            placeholder="Cari berdasarkan npm atau Nama...">
+                    </div>
+                    <div id="total-mahasiswa-info" class="status-summary">
+                        Menampilkan 3 mahasiswa
+                    </div>
+                </div>
+
+                <!-- Tabel Data Responsif -->
                 <div class="table-responsive">
                     <table class="data-table">
                         <thead>
                             <tr>
                                 <th>No</th>
                                 <th>Foto</th>
-                                <th>NIM</th>
+                                <th>npm</th>
                                 <th>Nama Lengkap</th>
                                 <th>Program Studi</th>
                                 <th>Angkatan</th>
                                 <th>Email</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>
-                                    <img src="img/avatar-default.svg" alt="Foto Ahmad Fauzi" class="avatar-img" width="36" height="36">
-                                </td>
-                                <td><strong>230101001</strong></td>
-                                <td>Ahmad Fauzi</td>
-                                <td><span class="badge">Teknik Informatika</span></td>
-                                <td>2023</td>
-                                <td><a href="mailto:ahmad.fauzi@example.com" class="link-email">ahmad.fauzi@example.com</a></td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>
-                                    <img src="img/avatar-default.svg" alt="Foto Siti Nurhaliza" class="avatar-img" width="36" height="36">
-                                </td>
-                                <td><strong>230101002</strong></td>
-                                <td>Siti Nurhaliza</td>
-                                <td><span class="badge">Sistem Informasi</span></td>
-                                <td>2023</td>
-                                <td><a href="mailto:siti.nurhaliza@example.com" class="link-email">siti.nurhaliza@example.com</a></td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>
-                                    <img src="img/avatar-default.svg" alt="Foto Budi Santoso" class="avatar-img" width="36" height="36">
-                                </td>
-                                <td><strong>240101015</strong></td>
-                                <td>Budi Santoso</td>
-                                <td><span class="badge">Teknologi Informasi</span></td>
-                                <td>2024</td>
-                                <td><a href="mailto:budi.santoso@example.com" class="link-email">budi.santoso@example.com</a></td>
-                            </tr>
+                        <tbody id="tabel-body-mahasiswa">
+                            <!-- Baris tabel akan di-generate secara dinamis oleh app.js -->
                         </tbody>
                     </table>
                 </div>
             </section>
 
-            <!-- 6. Section Form Tambah Mahasiswa -->
+            <!-- 6. Section Form Tambah Mahasiswa dengan Validasi JS -->
             <section id="form-tambah" class="content-section">
                 <div class="section-header">
                     <h2>Tambah Mahasiswa Baru</h2>
-                    <p>Formulir modern dengan grid layout dan penataan elemen input yang rapi.</p>
+                    <p>Formulir penambahan data dengan validasi interaktif dan pemrosesan instan via JavaScript.</p>
                 </div>
 
-                <form action="#" method="post" class="app-form">
+                <form id="form-tambah-mahasiswa" class="app-form" novalidate>
                     <fieldset>
                         <legend>Data Identitas Mahasiswa</legend>
 
                         <div class="form-grid">
                             <div class="form-group">
-                                <label for="nim" class="form-label">Nomor Induk Mahasiswa (NIM):</label>
+                                <label for="npm" class="form-label">Nomor Induk Mahasiswa (npm):</label>
                                 <input 
                                     type="text" 
-                                    id="nim" 
-                                    name="nim" 
+                                    id="npm" 
+                                    name="npm" 
                                     class="form-input" 
-                                    placeholder="Contoh: 230101001" 
-                                    required 
-                                    pattern="[0-9]{8,12}" 
-                                    title="NIM harus berupa angka 8-12 digit">
-                                <span class="form-help">* NIM wajib 8-12 digit angka.</span>
+                                    placeholder="Contoh: 230101001">
+                                <span class="form-help">* Wajib 8-12 digit angka dan belum pernah terdaftar.</span>
                             </div>
 
                             <div class="form-group">
@@ -169,16 +142,13 @@
                                     id="nama" 
                                     name="nama" 
                                     class="form-input" 
-                                    placeholder="Contoh: Ahmad Fauzi" 
-                                    required 
-                                    minlength="3" 
-                                    maxlength="100">
-                                <span class="form-help">* Minimal 3 karakter.</span>
+                                    placeholder="Contoh: Ahmad Fauzi">
+                                <span class="form-help">* Minpmal 3 karakter.</span>
                             </div>
 
                             <div class="form-group">
                                 <label for="program_studi" class="form-label">Program Studi:</label>
-                                <select id="program_studi" name="program_studi" class="form-select" required>
+                                <select id="program_studi" name="program_studi" class="form-select">
                                     <option value="">-- Pilih Program Studi --</option>
                                     <option value="Teknik Informatika">Teknik Informatika</option>
                                     <option value="Sistem Informasi">Sistem Informasi</option>
@@ -195,11 +165,8 @@
                                     id="angkatan" 
                                     name="angkatan" 
                                     class="form-input" 
-                                    placeholder="Contoh: 2024" 
-                                    required 
-                                    min="2018" 
-                                    max="2026">
-                                <span class="form-help">* Antara tahun 2018 hingga 2026.</span>
+                                    placeholder="Contoh: 2024">
+                                <span class="form-help">* Tahun antara 2018 - 2026.</span>
                             </div>
 
                             <div class="form-group full-width">
@@ -209,9 +176,8 @@
                                     id="email" 
                                     name="email" 
                                     class="form-input" 
-                                    placeholder="Contoh: ahmad.fauzi@example.com" 
-                                    required>
-                                <span class="form-help">* Masukkan alamat email aktif.</span>
+                                    placeholder="Contoh: ahmad.fauzi@example.com">
+                                <span class="form-help">* Masukkan format email yang valid.</span>
                             </div>
                         </div>
 
@@ -229,15 +195,18 @@
     <!-- 7. Footer -->
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2026 Praktikum Pemrograman Web - Pertemuan 2: Desain & Responsive CSS.</p>
+            <p>&copy; 2026 Praktikum Pemrograman Web - Pertemuan 3: JavaScript & DOM Manipulation.</p>
+            <p>Project Berkelanjutan: Sistem Informasi Data Mahasiswa (Tahap 3/6)</p>
             <p>
-                Bantuan: <a href="mailto:kelas@C">Labkom@unila.ac.id</a> | 
-                Dokumentasi: <a href="https://github.com" target="_blank" rel="noopener noreferrer">Repositori Proyek</a> | 
-                <a href="#top">Kembali ke Atas &uarr;</a>
+                Hubungi Administrator: <a href="mailto:admin.sima@kampus.ac.id">admin.sima@kampus.ac.id</a> | 
+                Dokumentasi: <a href="https://github.com" target="_blank" rel="noopener noreferrer">Repository GitHub</a>
             </p>
-            <p><small>Judul 2</small></p>
         </div>
     </footer>
 
+    <!-- Tambahkan Script JavaScript Eksternal -->
+    <script src="app.js"></script>
 </body>
 </html>
+
+
