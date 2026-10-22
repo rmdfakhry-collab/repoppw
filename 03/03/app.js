@@ -211,23 +211,29 @@ function hapusMahasiswa(nim) {
 
 // 9. Fitur Pencarian Langsung Real-Time / Live Search (Percobaan 3-5)
 
+
+const inputSearch = document.getElementById("input-search");
+
+// 9. Fitur Pencarian Langsung Real-Time / Live Search
 if (inputSearch) {
     inputSearch.addEventListener("input", function () {
         const keyword = inputSearch.value.trim().toLowerCase();
-        if (keyword === "")
+
+        if (keyword === "") {
             renderTable(dataMahasiswa);
-} else {
-    const hasilFilter = dataMahasiswa.filter(mhs =>
-        mhs.nama.toLowerCase().includes(keyword) ||
-        mhs.nim.includes(keyword) ||
-        mhs.program_studi.toLowerCase().includes(keyword)
-    );
-    renderTable(hasilFilter);
+        } else {
+            const hasilFilter = dataMahasiswa.filter(mhs =>
+                mhs.nama.toLowerCase().includes(keyword) ||
+                mhs.nim.includes(keyword) ||
+                mhs.program_studi.toLowerCase().includes(keyword)
+            );
+
+            renderTable(hasilFilter);
+        }
+    });
 }
-};
 
 // Inisialisasi saat DOM selesai dimuat
 document.addEventListener("DOMContentLoaded", function () {
     renderTable(dataMahasiswa);
 });
-
